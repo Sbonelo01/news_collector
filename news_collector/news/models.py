@@ -10,7 +10,7 @@ def __str__(self):
   return self.title
 
   new_headline = Headline()
-  new_headline.title = m title
+  new_headline.title = title
   new_headline.url = link
   new_headline.image = image_src
   new_headline.save()
