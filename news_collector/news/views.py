@@ -29,8 +29,8 @@ def Scrape(request):
 
 #serving stored database objects
 def news_list(request):
-	headlines = Headline.objects.all()[::-1]
+	headlines = Headline.objects.all()[::-1]	#reversing headlines to get the latest on top
 	context = {
 			'object_list': headlines,
 	}
-	return render(request, "news/home.html", context)
+	return render(request, "news/index.html", context)
