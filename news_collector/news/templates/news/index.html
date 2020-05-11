@@ -8,31 +8,36 @@
     <div class="jumbotron">
       <center>
         <h1>
-          <h1 class="font-weight-lighter" style="font-family: fantasy">NEWS COLLECTOR</h1><hr/>
-          <a href="{% url 'scrape' %}" class="btn btn-success"> GET NEWS + </a>
+          <h1 class="font-weight-lighter" style="font-family: fantasy; color: orange;">NEWS COLLECTOR</h1>
+          <!-- <a href="{% url 'scrape' %}" class="btn btn-warning"> GET NEWS + </a> -->
         </h1>
       </center>
     </div>
     <div class="card-columns" style="padding: 10px; margin: 20 px;">
       {% for object in object_list %}
-       <div class="card" style="width: 18rem; border: 5px black solid;">
-         <img class="card-img-top" src="{{ object.image }}">
-         <div class="card-body">
+      <div class="card" style="width: 20rem; border: 5px orange solid;">
+        <img class="card-img-top" src="{{ object.image }}">
+          <div class="card-body">
            <h5 class="card-title">
              <div class="card-body">
               <a href="{{ object.url }}"></a><h5 class="card-title">{{ object.title }}</h5></a>
-            </div>
-           </h5>
-         </div>
+             </div>
+            </h5>
+           </div>
+          </div>
+        {% endfor %}
        </div>
-       {% endfor %}
       </div>
-    </div>
-    <script
+      <footer>
+        <center>
+          <a href="{% url 'scrape' %}" class="btn btn-outline-primary btn-lg"> GET NEWS + </a>
+        </center>
+      </footer>
+     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -6,11 +6,13 @@ class Headline(models.Model):
   image = models.URLField(null=True, blank=True)
   url = models.TextField()
 
-def __str__(self):
-  return self.title
+  def __str__(self):
+    return self.title
+    return self.image
+    return self.url
 
-  new_headline = Headline()
-  new_headline.title = title
-  new_headline.url = link
-  new_headline.image = image_src
-  new_headline.save()
+# new_headline = Headline()
+# new_headline.title = title
+# new_headline.url = link
+# new_headline.image = image_src
+# new_headline.save()

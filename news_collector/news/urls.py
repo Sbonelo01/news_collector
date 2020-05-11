@@ -1,7 +1,7 @@
 from django.urls import path
-from news.views import Scrape, news_list
+from news.views import scrape, news_list
 
 urlpatterns = [
-  path('scrape/', Scrape, name="scrape"),
+  path('scrape/', scrape, name="scrape"),
   path('', news_list, name="home"),
 ]
