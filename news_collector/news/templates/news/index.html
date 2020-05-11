@@ -8,14 +8,14 @@
     <div class="jumbotron">
       <center>
         <h1>
-          <h1 class="font-weight-lighter" style="font-family: fantasy; color: orange;">NEWS COLLECTOR</h1>
+          <h1 class="font-weight-lighter text-primary" style="font-family: sans-serif; color: blue;">NEWS COLLECTOR</h1>
           <!-- <a href="{% url 'scrape' %}" class="btn btn-warning"> GET NEWS + </a> -->
         </h1>
       </center>
     </div>
     <div class="card-columns" style="padding: 10px; margin: 20 px;">
       {% for object in object_list %}
-      <div class="card" style="width: 20rem; border: 5px orange solid;">
+      <div class="card" style="width: 20rem; border: 5px blue solid;">
         <img class="card-img-top" src="{{ object.image }}">
           <div class="card-body">
            <h5 class="card-title">
