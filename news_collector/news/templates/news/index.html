@@ -9,18 +9,20 @@
       <center>
         <h1>
           <h1 class="font-weight-lighter text-primary" style="font-family: sans-serif; color: blue;">NEWS COLLECTOR</h1>
-          <!-- <a href="{% url 'scrape' %}" class="btn btn-warning"> GET NEWS + </a> -->
+          <a href="{% url 'scrape' %}" class="btn btn-outline-primary btn-lg"> GET NEWS + </a>
         </h1>
       </center>
     </div>
-    <div class="card-columns" style="padding: 10px; margin: 20 px;">
+    <div class="card-columns" style="padding: 20px; margin: 20px;">
       {% for object in object_list %}
-      <div class="card" style="width: 20rem; border: 5px blue solid;">
+      <div class="card" style="width: 20rem; box-shadow: 0.1px 6px -6px black;">
         <img class="card-img-top" src="{{ object.image }}">
           <div class="card-body">
            <h5 class="card-title">
              <div class="card-body">
-              <a href="{{ object.url }}"></a><h5 class="card-title">{{ object.title }}</h5></a>
+              <a href="{{ object.url }}">
+                <h5 class="card-title">{{ object.title }}</h5>
+              </a>
              </div>
             </h5>
            </div>
@@ -30,7 +32,7 @@
       </div>
       <footer>
         <center>
-          <a href="{% url 'scrape' %}" class="btn btn-outline-primary btn-lg"> GET NEWS + </a>
+          <p>&copy; 2020 Sbonelo Mkhize</p>
         </center>
       </footer>
      <script
