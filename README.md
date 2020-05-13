@@ -1,3 +1,3 @@
 #news_collector
 
--- a minimalistic site that grabs news --
+``` a minimalistic site that grabs news ```
