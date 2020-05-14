@@ -8,9 +8,9 @@ class Headline(models.Model):
   url = models.TextField()
 
   def __str__(self):
-    return self.title
-    return self.image
-    return self.url
+    return self.title[0]
+    return self.image[0]
+    return self.url[0]
 
 # new_headline = Headline()
 # new_headline.title = title
