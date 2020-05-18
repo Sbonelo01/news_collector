@@ -1,10 +1,17 @@
+import os
 from django.shortcuts import render
 
 # Create your views here.
 import requests
+import certifi
+import urllib3
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup as BSoup
 from news.models import Headline
+
+http = urllib3.PoolManager(
+    cert_reqs='CERT_REQUIRED',
+    ca_certs=certifi.where())
 
 # rendering requested data
 #def scrape(request):
@@ -17,13 +24,13 @@ def scrape(request):
     }
     url = "https://www.news24.com/"
 
-    content = session.get(url, verify=False).content
+    content = session.get(url, verify=True).content
     soup = BSoup(content, "html.parser")
     news = soup.find_all('div', {
         "class":"main_wrap"
     })
 
-    for article in Headline:
+    for article in news:
         main = article.find_all('a')[0]
         link = main['href']
         image_src = str(main.find('img')['srcset']).split(" ")[-4]
@@ -33,7 +40,7 @@ def scrape(request):
         new_headline.url = link
         new_headline.image = image_src
         new_headline.save()
-        return redirect("../")
+    return redirect("../")
 
 
 # serving stored database objects
