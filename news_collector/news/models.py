@@ -9,8 +9,8 @@ class Headline(models.Model):
 
   def __str__(self):
     return self.title[0]
-    return self.image[0]
-    return self.url[0]
+    #return self.image[0]
+    #return self.url[0]
 
 # new_headline = Headline()
 # new_headline.title = title
