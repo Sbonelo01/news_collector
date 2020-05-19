@@ -1,10 +1,10 @@
 import os
-from django.shortcuts import render
 
 # Create your views here.
 import requests
 import certifi
 import urllib3
+from django.shortcuts import render
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup as BSoup
 from news.models import Headline
@@ -13,6 +13,7 @@ http = urllib3.PoolManager(
     cert_reqs='CERT_REQUIRED',
     ca_certs=certifi.where())
 
+#scrapping from news 24
 def scrape(request):
     session = requests.Session()
     session.headers = {
