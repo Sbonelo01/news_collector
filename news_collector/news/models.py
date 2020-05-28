@@ -3,7 +3,8 @@ from django.db import migrations, models
 
 # Create your models here.
 class Headline(models.Model):
-  title = models.CharField(max_length=200, primary_key=True                                                                                                                                                                                 )
+  title = models.CharField(max_length=200, primary_key=True                                                                                                                                                                                 
+    )
   image = models.URLField(null=True, blank=True)
   url = models.TextField()
 
